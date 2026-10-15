@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:dye",
+      "damage": 4
+    }
+  ],
+  "result": {
+    "item": "magicallapis:blueberry_of_persistence"
+  }
+}

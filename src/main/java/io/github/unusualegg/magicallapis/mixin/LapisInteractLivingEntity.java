@@ -29,7 +29,7 @@ public class LapisInteractLivingEntity implements CanDespawnAccessor {
     private void canDespawnMixin(CallbackInfoReturnable<Boolean> cir) {
         cir.setReturnValue(shouldDespawn);
     }
-//CROCS
+
     @Inject(method = "writeNbt", at=@At(value="TAIL"))
     public void writeNbt(NbtCompound nbt, CallbackInfo ci) {
         nbt.putBoolean("canDespawn", shouldDespawn);
@@ -37,6 +37,14 @@ public class LapisInteractLivingEntity implements CanDespawnAccessor {
     @Inject(method = "readNbt", at=@At(value="TAIL"))
     public void readNbt(NbtCompound nbt, CallbackInfo ci) {
         shouldDespawn = nbt.getBoolean("canDespawn");
+    }
+
+    //FIXME: this method gets overridden
+    @Inject(method = "getDroppedItemId", at = @At(value = "RETURN"), cancellable = true)
+    protected void getDroppedItemIdMixin(CallbackInfoReturnable<Integer> cir) {
+        if (!shouldDespawn) {
+            cir.setReturnValue(-1);
+        }
     }
 
 }
