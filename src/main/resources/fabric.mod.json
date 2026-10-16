@@ -3,17 +3,16 @@
   "id": "magicallapis",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Magical Lapis",
+  "description": "This mod adds the Blueberry Of Persistence (made with a lapis).",
   "authors": [
-    "Me!"
+    "UnusualEgg aka NayaSapphire"
   ],
   "contact": {
-    "homepage": "https://glass-launcher.net/",
-    "sources": "https://github.com/calmilamsy/stationapi-example-mod"
+    "sources": "https://github.com/UnusualEgg/magical-lapis"
   },
 
-  "license": "CC0-1.0",
+  "license": "MIT",
   "icon": "assets/magicallapis/icon.png",
 
   "environment": "*",
